@@ -32,7 +32,7 @@ void prints(Node* &head){
         temp = temp->next;
         i++;
     } 
-    cout<<"\n"<<i<<endl;
+    cout<<"\n";
 }
 
 void insertathead(Node* &head,Node* &tail,int data){
@@ -89,6 +89,41 @@ void insertatposition(Node *&head, Node *&tail,int posi, int data){
 }
 
 
+//deletion
+
+void deletionaatail(Node* &head,Node* &tail){
+    int len = findlength(head);
+    Node* prev = head;
+    int i = 1;
+    while( i < len-1 ){
+        prev = prev->next;
+        i++;
+    } 
+    Node* temp = prev->next;
+    tail = prev; 
+    tail->next = NULL;
+    delete temp;
+}
+
+void deletionatposition(Node* &head,Node* &tail,int posi){
+    Node* prev = head;
+    int i = 1;
+    while( i < posi-1 ){
+        prev = prev->next;
+        i++;
+    } 
+    Node* curr = prev->next;
+    Node* temp = curr;
+    prev->next = curr->next;
+    delete temp;
+}
+
+void deletionaahead(Node* &head,Node* &tail){
+    Node* temp = head;
+    head = temp->next;
+    temp->next = NULL;
+    delete temp;
+}
 int main(){
     Node* head = NULL;
     Node* tail = NULL;
@@ -99,7 +134,14 @@ int main(){
     insertathead(head,tail,40);
     insertattail(head,tail,100);
     insertatposition(head,tail,10,80);
+    prints(head);
 
-    cout<<"itna shi h"<<endl;
+
+    deletionaatail(head,tail);
+    deletionaahead(head,tail);
+    prints(head);
+
+    deletionatposition(head,tail,2);
+    
     prints(head);
 }
