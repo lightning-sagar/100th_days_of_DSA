@@ -3,15 +3,15 @@ using namespace std;
 
 class Node {
 public:
-    int val;
+    int data;
     Node* next;
 
     Node() {
-        this->val = 0;
+        this->data = 0;
         this->next = NULL;
     }
-    Node(int val) {
-        this->val = val;
+    Node(int data) {
+        this->data = data;
         this->next = NULL;
     }
 };
@@ -19,7 +19,7 @@ public:
 void prints(Node* head) {
     Node* temp = head;
     while(temp != NULL) {
-        cout << temp->val << " ";
+        cout << temp->data << " ";
         temp = temp->next;
     } 
 }
@@ -76,9 +76,9 @@ Node* swapNodes(Node* head, int k) {
             temp2=temp2->next;
             x--;
         }
-        int swp=temp1->val;
-        temp1->val=temp2->val;
-        temp2->val=swp;
+        int swp=temp1->data;
+        temp1->data=temp2->data;
+        temp2->data=swp;
         return head;
 
     }
