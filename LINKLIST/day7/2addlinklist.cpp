@@ -87,6 +87,33 @@ Node* addTwoNumbers(Node* l1, Node* l2) {
 
     return resultHead;
 }
+Node* removeElement(Node* &head, int data) {
+        Node* temp = head;
+    Node* del = NULL;
+
+    // Handle the case where the head itself contains the data to be removed
+    while (temp != NULL && temp->data == data) {
+        del = temp;
+        temp = temp->next;
+        delete del;
+    }
+
+    // Update the head after removal
+    head = temp;
+
+    // Traverse the list and remove nodes with the specified data
+    while (temp != NULL && temp->next != NULL) {
+        if (temp->next->data == data) {
+            del = temp->next;
+            temp->next = temp->next->next;
+            delete del;
+        } else {
+            temp = temp->next;
+        }
+    }
+
+    return head;
+    }
 
 int main(){
     Node* head = NULL;
@@ -97,6 +124,9 @@ int main(){
     insertathead(head,tail,30);
     insertathead(head,tail,40);
 
-    head = addTwoNumbers(head,tail);
+    head = removeElement(head,20);
     prints(head);
+
+    // head = addTwoNumbers(head,tail);
+    // prints(head);
 }
