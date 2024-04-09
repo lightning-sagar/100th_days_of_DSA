@@ -98,7 +98,7 @@ Node* removeElement(Node* &head, int data) {
         delete del;
     }
 
-    // Update the head after removal
+    // Update the head after remodata
     head = temp;
 
     // Traverse the list and remove nodes with the specified data
