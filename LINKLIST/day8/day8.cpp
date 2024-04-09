@@ -118,23 +118,49 @@ Node* deleteDuplicates(Node* head) {
     return head;
 }
 
+int getlength(Node* head){
+        int c = 0;
+        while(head != NULL){
+            head = head->next;
+            c++;
+        }
+        cout<<c;
+        return c;
+    }
+    Node* removeNthFromEnd(Node* head, int n) {
+        if(head == NULL){
+            return head;
+        }
+ 
+        Node* curr = head;
+        int len = findlength(head); 
+        int posi = len-n;
+        int i = 0;
+        while(curr!=NULL){
+            if(i == posi){
+                Node* temp = curr->next;
+                curr->next = temp->next;
+                delete temp;
+            }
+                curr = curr->next;
+                i++;
+        }
+        return head;
+    }
+
 int main() {
     Node* head = NULL;
     Node* tail = NULL;
     insertathead(head, tail, 10);
-    insertathead(head, tail, 10);
-    insertathead(head, tail, 20);
-    insertathead(head, tail, 20);
     insertathead(head, tail, 20);
     insertathead(head, tail, 30);
-    insertathead(head, tail, 40);
     insertathead(head, tail, 40);
     prints(head);
     cout<<"\n";
     cout<<isPalindrome(head);
     cout<<"\n";
 
-    head = deleteDuplicates(head);
+    head = removeNthFromEnd(head,2);
     prints(head);
 
 }
