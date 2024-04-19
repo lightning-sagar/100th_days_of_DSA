@@ -1,7 +1,7 @@
 class Solution {
 private:
     ListNode* reverseLL(ListNode* head){
-         // just a code for reversing a linked list
+        
         if (!head || !head->next) return head;
         ListNode * prev = nullptr;
         ListNode * next = nullptr;

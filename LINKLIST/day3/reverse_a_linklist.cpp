@@ -1,66 +1,25 @@
-#include<iostream>
-using namespace std;
-class Node{
-    public:
-    int data;
-    Node* next;
-
-    Node(){
-        this->data = 0;
-        this->next = NULL;
-    }
-    Node(int data){
-        this->data = data;
-        this->next = NULL;
-    }
-};
-
-void prints(Node* &head){
-    int i = 0;
-    Node* temp = head;
-    while(temp != NULL){
-        cout<<temp->data<<" ";
-        temp = temp->next;
-        i++;
-    } 
-}
-
-void insertathead(Node* &head,Node* &tail,int data){
-    //check condition if head or tail is node..... if yes then...
-    if(head == NULL){
-        Node* newnode = new Node(data);
-        head = newnode;
-        tail = newnode;
-        return;
-    }
-    Node* newnode = new Node(data);
-    newnode->next = head;
-    head = newnode;
-}
-
-Node* reverse(Node* &head, Node* &tail){
-    Node* prev = NULL;
-    Node* curr = head;
-    Node* forward = head;
-    while(curr != NULL){
-        forward = curr->next;
-        curr -> next = prev;
-        prev = curr;
-        curr = forward;
-    }
-    return prev;
-}
-int main(){
-    Node* head = NULL;
-    Node* tail = NULL;
-    //insertion in linklist
-    insertathead(head,tail,50);
-    insertathead(head,tail,20);
-    insertathead(head,tail,30);
-    insertathead(head,tail,40);
-
-    prints(head);
-    cout<<"\n";
-    head = reverse(head,tail);
-    prints(head);
-}
+ListNode* prev = head; // Point to the node before the sublist to be reversed
+        
+        // Move to the node before the sublist to be reversed
+        for (int i = 1; i < left; ++i) {
+            prev = prev->next;
+        }
+        
+        ListNode* sub_list = prev->next; // Pointer to the start of the sublist to be reversed
+        
+        // Move to the end of the sublist to be reversed
+        for (int i = left; i < right; ++i) {
+            sub_list = sub_list->next;
+        }
+        
+        ListNode* t1 = prev; // Store the node before the sublist for reconnection later
+        ListNode* t2 = sub_list->next; // Store the node after the sublist for reconnection later
+        
+        // Reverse the sublist between left and right indices
+        reverse(sub_list);
+        
+        // Reconnect the sublist back into the original list
+        prev->next = sub_list;
+        t1->next = t2;
+        
+        return head;
