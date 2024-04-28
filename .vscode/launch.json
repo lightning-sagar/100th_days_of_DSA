@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/light/OneDrive/Desktop/100th_days_of_DSA/QUEUE/day24",
-      "program": "c:/Users/light/OneDrive/Desktop/100th_days_of_DSA/QUEUE/day24/build/Debug/outDebug",
+      "cwd": "c:/Users/light/OneDrive/Desktop/100th_days_of_DSA/QUEUE/day26",
+      "program": "c:/Users/light/OneDrive/Desktop/100th_days_of_DSA/QUEUE/day26/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
