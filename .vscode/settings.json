@@ -60,6 +60,8 @@
     "*.ejs": "html",
     "array": "cpp",
     "string": "cpp",
-    "vector": "cpp"
+    "vector": "cpp",
+    "random": "cpp",
+    "limits": "cpp"
   }
 }
