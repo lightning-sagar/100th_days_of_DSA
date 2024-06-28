@@ -1,0 +1,2 @@
+did some revision of hash map and trie 
+nxt goal to start graph
