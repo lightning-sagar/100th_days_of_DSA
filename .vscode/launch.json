@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/HP/OneDrive/Desktop/100th_days_of_DSA/TRIES/day52",
-      "program": "c:/Users/HP/OneDrive/Desktop/100th_days_of_DSA/TRIES/day52/build/Debug/outDebug",
+      "cwd": "c:/Users/HP/OneDrive/Desktop/100th_days_of_DSA/GRAPH/day57",
+      "program": "c:/Users/HP/OneDrive/Desktop/100th_days_of_DSA/GRAPH/day57/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
