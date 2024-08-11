@@ -11,8 +11,8 @@ The **100 Days of DSA** challenge is designed to provide a structured approach t
 
 This repository is organized as follows:
 
-- **`/day1`**: Problems and solutions for Day 1.
-- **`/day2`**: Problems and solutions for Day 2.
+- **`/LINKLIST/day1`**: Problems and solutions for Day 1.
+- **`/LINKLIST/day2`**: Problems and solutions for Day 2.
 - ...
 - **`/day100`**: Problems and solutions for Day 100.
 
